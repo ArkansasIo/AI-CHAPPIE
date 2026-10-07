@@ -1,0 +1,115 @@
+{
+  "robot": {
+    "name": "Chappie",
+    "model": "Scout-22",
+    "serial": "CHP-0001",
+    "personality_preset": "curious_child"
+  },
+  "brain": {
+    "learning_rate": 0.05,
+    "hidden_layers": [
+      16,
+      12
+    ],
+    "memory_capacity": 5000,
+    "decision_threshold": 0.55,
+    "curiosity": 0.8,
+    "reflection_interval_sec": 30
+  },
+  "personality": {
+    "preset": "curious_child",
+    "traits": {
+      "openness": 0.9,
+      "conscientiousness": 0.6,
+      "extraversion": 0.7,
+      "agreeableness": 0.8,
+      "neuroticism": 0.3,
+      "curiosity": 0.85,
+      "playfulness": 0.9,
+      "assertiveness": 0.4
+    },
+    "mood": {
+      "baseline": 0.65,
+      "volatility": 0.15
+    }
+  },
+  "vision": {
+    "enabled": true,
+    "width": 160,
+    "height": 120,
+    "channels": 1,
+    "detection_threshold": 0.5,
+    "frame_history": 60
+  },
+  "speech": {
+    "recognition_enabled": false,
+    "tts_enabled": true,
+    "language": "en-US",
+    "voice": "synthetic-young",
+    "wake_word": "chappie",
+    "confidence_threshold": 0.4
+  },
+  "robotics": {
+    "max_speed": 1.5,
+    "battery_capacity": 100.0,
+    "idle_drain_per_sec": 0.01,
+    "move_drain_per_sec": 0.08,
+    "servo_count": 6,
+    "arm_reach_cm": 45.0
+  },
+  "navigation": {
+    "world_width": 40,
+    "world_height": 40,
+    "obstacle_density": 0.15,
+    "algorithm": "astar",
+    "step_cost": 1.0,
+    "diagonal": true
+  },
+  "sensors": {
+    "range_cm": 200.0,
+    "beam_count": 8,
+    "imu_noise": 0.02,
+    "temperature_c": 21.0
+  },
+  "security": {
+    "autonomy_level": "supervised",
+    "require_confirmation": [
+      "shutdown",
+      "reformat",
+      "network_broadcast"
+    ],
+    "denied_zones": [
+      [
+        5,
+        5,
+        2
+      ],
+      [
+        30,
+        30,
+        3
+      ]
+    ],
+    "max_speed_without_permission": 0.8,
+    "audit_log": true
+  },
+  "networking": {
+    "port": 8765,
+    "bind": "127.0.0.1",
+    "enable_remote_control": false,
+    "heartbeat_sec": 5
+  },
+  "plugins": {
+    "directory": "plugins",
+    "auto_load": true
+  },
+  "database": {
+    "path": "database/chappie.db",
+    "autosave_sec": 10
+  },
+  "logging": {
+    "level": "info",
+    "console": true,
+    "file": "logs/chappie.log"
+  }
+}
