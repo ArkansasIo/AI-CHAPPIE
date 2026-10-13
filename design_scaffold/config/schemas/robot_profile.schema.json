@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AI-CHAPPIE Robot Profile",
+  "type": "object",
+  "required": ["schema_version", "profile_name", "actuators_enabled_at_boot", "safety"],
+  "properties": {
+    "schema_version": {"type": "integer", "const": 1},
+    "profile_name": {"type": "string", "minLength": 1},
+    "actuators_enabled_at_boot": {"type": "boolean", "const": false},
+    "max_command_age_ms": {"type": "integer", "minimum": 1, "maximum": 1000},
+    "expected_joint_count": {"type": "integer", "minimum": 1, "maximum": 128},
+    "safety": {"type": "object", "required": ["require_estop_clear", "require_heartbeat", "require_interlocks"], "properties": {"require_estop_clear": {"const": true}, "require_heartbeat": {"const": true}, "require_interlocks": {"const": true}}, "additionalProperties": false}
+  },
+  "additionalProperties": true
+}
