@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "default_decision": "deny",
+  "requires_authenticated_requester": true,
+  "requires_explicit_permission": true,
+  "deny_potential_human_harm": true,
+  "deny_flagged_unlawful_actions": true,
+  "require_confirmation_for_ambiguous_commands": true,
+  "require_separate_confirmation_for_high_risk": true,
+  "llm_is_authority": false,
+  "safety_controller_may_be_overridden_by_ai": false,
+  "notes": "Illustrative policy configuration; deployment needs legal and safety review."
+}
