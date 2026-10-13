@@ -1,6 +1,6 @@
 # Build and Test
 
-Requirements: CMake 3.16 or newer and a C++17 compiler.
+Requirements: CMake 3.16+ and a C++17 compiler.
 
 ```bash
 cmake -S . -B build
@@ -9,6 +9,6 @@ ctest --test-dir build --output-on-failure
 ./build/chappie_demo
 ```
 
-On Windows with Visual Studio, use `cmake -S . -B build` then `cmake --build build --config Release` and `ctest --test-dir build -C Release --output-on-failure`.
+Windows/Visual Studio: `cmake -S . -B build`, `cmake --build build --config Release`, then `ctest --test-dir build -C Release --output-on-failure`.
 
-These commands validate the portable software only. They do not compile the Arduino sketches, validate electrical design, or prove real-time deadlines. Firmware requires the exact selected board package and vendor libraries.
+These commands validate portable software only. They do not compile Arduino sketches, validate wiring, or prove real-time deadlines. Firmware requires the exact board package and vendor libraries.
