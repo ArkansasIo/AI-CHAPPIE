@@ -1,13 +1,7 @@
 # Operations
 
-## Before power-on
-Inspect frame fasteners, joint couplings, cable routing, guards, battery retention, fuses, grounding and E-stop access. Ensure the workspace is clear and a trained operator is present.
+Before power-on, inspect fasteners, couplings, cable routing, guards, battery retention, fuses, grounding and E-stop access. Keep the workspace clear and have a trained operator present.
 
-## Startup
-Start with actuator power isolated. Validate configuration, sensor status, heartbeat, drive diagnostics and emergency-stop circuit. Enable any actuator only through a reviewed hardware-specific procedure.
+Start with actuator power isolated. Validate configuration, sensors, heartbeat, drive diagnostics and the independent E-stop circuit. Enable actuators only through a reviewed hardware-specific procedure.
 
-## Fault response
-On unexpected motion, communication loss, overheating, sensor disagreement or mechanical noise: stop through the independent emergency-stop path, isolate power as appropriate, secure the robot against falling, preserve logs and inspect before reset. Never automatically resume motion after a fault or reboot.
-
-## Maintenance
-Record firmware/software versions, calibration values, replaced parts, checks performed and approvals. Do not use the MCU sketches as replacements for vendor drive safety configuration.
+On unexpected movement, communication loss, overheating, sensor disagreement or unusual mechanical noise: stop using the independent E-stop, isolate power as appropriate, secure the robot against falling, preserve logs and inspect before reset. Never resume motion automatically after fault/reboot.
