@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "permissions": {
+    "read_status": {"allow": true, "risk": "low"},
+    "move_joint": {"allow": false, "risk": "critical", "requires_separate_enable": true},
+    "enable_actuators": {"allow": false, "risk": "critical", "requires_physical_interlock": true},
+    "modify_safety_policy": {"allow": false, "risk": "critical", "requires_maintainer_review": true}
+  },
+  "unknown_action": "deny"
+}
