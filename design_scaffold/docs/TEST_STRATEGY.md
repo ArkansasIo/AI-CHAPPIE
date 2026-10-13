@@ -1,17 +1,17 @@
 # Test Strategy
 
-## Software tests
-- Policy defaults to deny and rejects unauthenticated, unauthorized, ambiguous and high-risk commands.
-- Configuration parsing validates schema version, types, bounds and required keys.
-- Fault paths test missing E-stop status, lost heartbeat, expired commands, invalid floating-point values and stale sensor data.
-- Simulation tests exercise startup disabled, bounded motion requests and stop behavior.
-- MCU protocol tests must cover byte order, length bounds, CRC, sequence rollover, replay, timeout and malformed messages.
+## Software
+- Policy defaults to deny and rejects unauthenticated/unauthorized/high-risk/ambiguous commands.
+- Validate configuration schema, types, bounds and required keys.
+- Inject missing E-stop status, lost heartbeat, expired commands, invalid floats and stale data.
+- Verify actuator-disabled startup and stop behavior in simulation.
+- Protocol tests should cover byte order, length, CRC, sequence rollover, replay, timeout and malformed messages.
 
-## Hardware-in-the-loop sequence
-1. Test power rails and grounds with actuators disconnected.
-2. Verify E-stop and drive STO/enable behavior independently of the AI computer.
-3. Validate each drive with a current-limited bench supply and no load.
-4. Add one axis at a time with mechanical stops, guarding and a reviewed risk assessment.
-5. Conduct tethered, constrained, low-energy motion tests before any balance or walking test.
+## Hardware-in-the-loop
+1. Test rails and grounds with actuators disconnected.
+2. Verify E-stop and drive STO/enable independently of AI/network.
+3. Validate each drive on a current-limited bench setup without load.
+4. Add axes incrementally with guarding and a reviewed risk assessment.
+5. Do tethered, constrained low-energy tests before balance/walking trials.
 
-Never use this scaffold as evidence of safety certification. Every physical configuration requires its own validation and sign-off.
+This scaffold is not a certification or safety claim. Every physical configuration needs specific validation and qualified sign-off.
