@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "profile_name": "simulated-biped-28-axis",
+  "description": "Simulation-only example; limits are not physical actuator ratings.",
+  "actuators_enabled_at_boot": false,
+  "max_command_age_ms": 100,
+  "expected_joint_count": 28,
+  "safety": {"require_estop_clear": true, "require_heartbeat": true, "require_interlocks": true},
+  "telemetry": {"stale_after_ms": 100, "publish_hz": 20}
+}
