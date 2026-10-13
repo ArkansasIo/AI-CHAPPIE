@@ -1,7 +1,7 @@
 # Boot and Configuration
 
-Startup state is actuator-disabled. The boot manager checks required configuration fields, policy availability and self-test results before entering safe idle. A failure remains faulted or degraded and requires explicit recovery after diagnosis.
+Startup is actuator-disabled. Application-level boot checks confirm configuration, policy availability and self-tests before entering safe idle. Critical failures leave the runtime faulted/degraded pending diagnosis.
 
-Configuration is represented by versioned JSON files and schema validation. “CMOS-style settings” means a persistent configuration file in this project, not motherboard CMOS/NVRAM or platform firmware. BootManager is application-level initialization; it is not BIOS/UEFI.
+Settings use versioned JSON and schema validation. “CMOS-style settings” means file-backed application configuration, not motherboard CMOS/NVRAM. BootManager is app initialization, not BIOS/UEFI.
 
-Production systems should use atomic updates, schema migration, signed configuration where appropriate, bounded values, audit logging and rollback. Runtime profile changes affecting motion or safety require a maintenance workflow and cannot relax independent hardware safety.
+Production updates require atomic writes, migration/rollback strategy, bounded values, audit logging and authorized maintenance. Runtime profile edits must never relax independent hardware safety.
