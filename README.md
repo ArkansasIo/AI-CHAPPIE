@@ -30,11 +30,23 @@ For Visual Studio's multi-configuration generator on Windows, use
 
 ## Python library
 
+Install the runtime dependency and run the core math demo:
+
 ```sh
 python -m pip install -r requirements.txt
 python -m tests.test_math
 python examples/01_xor_manual.py
 ```
+
+For the full development test suite, install development dependencies:
+
+```sh
+python -m pip install -r requirements-dev.txt
+python -m tests.test_math
+python -m pytest -q tests/test_autograd.py tests/test_gates.py
+```
+
+CI uses `requirements-dev.txt` to install both runtime and test dependencies.
 
 ## Runtime simulator
 
