@@ -329,7 +329,7 @@ def to_nor(gate_name: str, a, b=None):
     not_b = NOR(b, b)
     or_ab = NOR(NOR(a, b), NOR(a, b))
     and_ab = NOR(not_a, not_b)
-    xor_ab = NOR(NOR(a, NOR(a, b)), NOR(b, NOR(a, b)))
+    xor_ab = NOR(NOR(NOR(a, a), NOR(b, b)), NOR(a, b))
 
     table = {
         "NOT": not_a, "AND": and_ab, "OR": or_ab, "NOR": NOR(a, b),
